@@ -2,6 +2,7 @@ package br.com.smart.vendas.model;
 
 import java.math.BigDecimal;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,10 +13,13 @@ public class Produto {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	//@Column(name="produto_id")
 	private Long id;
 	
+	//@Column(name="produto_nome")
 	private String nome;
 	
+	//@Column(name="produto_valor")
 	private BigDecimal valor;
 
 	public Long getId() {

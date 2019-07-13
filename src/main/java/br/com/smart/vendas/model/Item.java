@@ -1,9 +1,11 @@
 package br.com.smart.vendas.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 
@@ -12,16 +14,20 @@ public class Item {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	//@Column(name="item_id")
 	private Long id;
-	
+		
+	//@JoinColumn(name="item_venda_id")
 	@ManyToOne
 	private Venda venda;
-	
+		
+	//@JoinColumn(name="item_produto_id")
 	@NotNull
 	@ManyToOne
 	private Produto produto;
 	
 	@NotNull
+	//@Column(name="item_quantidade")
 	private Integer quantidade;
 
 	public Long getId() {

@@ -1,5 +1,6 @@
 package br.com.smart.vendas.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -10,8 +11,12 @@ public class Cliente {
 	
 	@Id
 	@GeneratedValue(strategy =  GenerationType.IDENTITY)
+	//@Column(name="cliente_id")
 	private Long id;
+	
+	//@Column(name="cliente_nome")
 	private String nome;
+	
 	public Long getId() {
 		return id;
 	}
@@ -47,6 +52,6 @@ public class Cliente {
 			return false;
 		return true;
 	}
-
+		
 	
 }

@@ -5,10 +5,12 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.validation.Valid;
@@ -22,10 +24,13 @@ public class Venda {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	//@Column(name="venda_id")
 	private Long id;
 	
+	//@Column(name="venda_cadastro")
 	private LocalDateTime cadastro;
-	
+		
+	//@JoinColumn(name="venda_cliente_id")
 	@ManyToOne
 	private Cliente cliente;
 	
@@ -36,8 +41,10 @@ public class Venda {
 	private List<Item> itens;
 	
 	@NotNull
+	//@Column(name="venda_frete")
 	private BigDecimal frete;
 	
+	//@Column(name="venda_total")
 	private BigDecimal total;
 
 	public Long getId() {
